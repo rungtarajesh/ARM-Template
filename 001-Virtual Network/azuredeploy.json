@@ -1,1 +1,85 @@
 
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+      "location" : {
+        "type": "string",
+        "defaultvalue" : "[resourceGroup().Location]",
+         "metadata": {
+            "description": "Location for all resources."
+          }
+      },
+      "VnetName" :{
+        "type" : "string",
+        "defaultvalue" : "[variables('VirtualNetworktName')]",
+         "metadata": {
+            "description": "Name for Virtual Network."
+          }
+      },
+       "resourceGroup": {
+            "type": "string"
+        },
+      "addressSpaces": {
+            "type": "array"
+        },
+        "ipv6Enabled": {
+            "type": "bool"
+        },
+        "subnetCount": {
+            "type": "int"
+        },
+        "subnet0_name": {
+            "type": "string"
+        },
+        "subnet0_addressRange": {
+            "type": "string"
+        },
+        "ddosProtectionPlanEnabled": {
+            "type": "bool"
+        },
+        "firewallEnabled": {
+            "type": "bool"
+        },
+        "bastionEnabled": {
+            "type": "bool"
+        }
+    },
+
+    "variables":{
+      "VirtualNetworktName" " "[concat('VNet', uniquestring(resourceGroup().id))]"
+    },
+    "resources":[
+      {
+            "name": "[parameters('VnetName')]",
+            "type": "Microsoft.Network/VirtualNetworks",
+            "apiVersion": "2019-09-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [],
+            "tags": {
+                "department": "finance"
+            },
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "default",
+                        "properties": {
+                            "addressPrefix": "10.0.0.0/24"
+                        }
+                    }
+                ],
+                "enableDdosProtection": "[parameters('ddosProtectionPlanEnabled')]"
+      }
+    ],
+    "outputs":{
+          "VirtualNetworktName": {
+          "type": "string",
+          "value": "[variables('VirtualNetworktName')]"
+        }
+      }
+}
