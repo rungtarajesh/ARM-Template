@@ -4,11 +4,11 @@
   "parameters": {
     "rgName": {
       "type": "string",
-      "Value": ""
+      "Value": "newARMRGtest"
     },
     "rgLocation": {
       "type": "string",
-      "Value": ""
+      "Value": "centralus"
     }
   }
 }
