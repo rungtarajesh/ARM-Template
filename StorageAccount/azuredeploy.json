@@ -33,7 +33,7 @@
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts",
-            "apiVersion": "2018-05-01",
+            "apiVersion": "2019-04-01",
              "sku": {
                 "name": "[parameters('storageAccountType')]"
               },
