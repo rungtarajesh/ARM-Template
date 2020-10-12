@@ -2,11 +2,13 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "<first-parameter-name>": {
-      "value": "<first-value>"
+    "rgName": {
+      "type": "string",
+      "defaultValue": "ARMRAJESHRGNEW"
     },
-    "<second-parameter-name>": {
-      "value": "<second-value>"
+    "rgLocation": {
+      "type": "string",
+      "defaultValue": "centralus"
     }
   }
 }
