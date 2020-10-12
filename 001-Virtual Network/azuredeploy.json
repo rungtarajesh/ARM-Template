@@ -47,7 +47,7 @@
     },
 
     "variables":{
-      "VirtualNetworktName" " "[concat('VNet', uniquestring(resourceGroup().id))]"
+      "VirtualNetworktName" : "[concat('VNet', uniquestring(resourceGroup().id))]"
     },
     "resources":[
       {
