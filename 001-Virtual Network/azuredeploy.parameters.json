@@ -8,9 +8,6 @@
         "virtualNetworkName": {
             "value": "testvnentarm"
         },
-        "resourceGroup": {
-            "value": "keyvault"
-        },
         "addressSpaces": {
             "value": [
                 "10.0.0.0/16"
