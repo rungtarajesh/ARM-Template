@@ -5,7 +5,7 @@
         "location": {
             "value": "eastus"
         },
-        "virtualNetworkName": {
+        "VnetName": {
             "value": "testvnentarm"
         },
         "addressSpaces": {
