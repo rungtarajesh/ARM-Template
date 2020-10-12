@@ -17,9 +17,6 @@
             "description": "Name for Virtual Network."
           }
       },
-       "resourceGroup": {
-            "type": "string"
-        },
       "addressSpaces": {
             "type": "array"
         },
