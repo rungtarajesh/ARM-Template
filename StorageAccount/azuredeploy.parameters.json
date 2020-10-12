@@ -6,7 +6,7 @@
       "Value": "Standard_LRS"
     },
     "location": {
-      "Value": "eastus"
+      "Value": "centralus"
     }
   }
 }
