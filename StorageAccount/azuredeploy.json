@@ -18,11 +18,10 @@
         "location": {
           "type": "string",
           "defaultValue": "[resourceGroup().location]",
-              "metadata": {
-                "description": "Location for all resources."
-              }
-            }
-          },
+          "metadata": {
+            "description": "Location for all resources."
+          }
+        },
         "tags": {
             "type": "object",
             "defaultValue": {}
