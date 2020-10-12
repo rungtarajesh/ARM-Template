@@ -74,6 +74,7 @@
                     }
                 ],
                 "enableDdosProtection": "[parameters('ddosProtectionPlanEnabled')]"
+        }
       }
     ],
     "outputs":{
