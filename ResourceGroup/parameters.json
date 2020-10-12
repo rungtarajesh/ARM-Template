@@ -4,11 +4,11 @@
   "parameters": {
     "rgName": {
       "type": "string",
-      "Value": "ARMRAJESHRGNEW"
+      "Value": ""
     },
     "rgLocation": {
       "type": "string",
-      "Value": "centralus"
+      "Value": ""
     }
   }
 }
