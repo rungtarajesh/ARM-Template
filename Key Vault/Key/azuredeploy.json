@@ -6,33 +6,37 @@
       "type": "string",
       "metadata": {
         "description": "Name of the Key Vault key"
-      },	
+      	}
+	},	
       "KetValutName": {
         "type": "string",
         "metadata": {
           "description": "Name of the Key Vault key"
+	}
       }	,
       "Options": {
         "type": "string",
         "metadata": {
           "description": "Options"
+	}
       }	,
       "KeyType": {
         "type": "string",
         "metadata": {
           "description": "KeyType"
+	}
       }	,
       "RSAKeySize": {
         "type": "int",
         "metadata": {
           "description": "RSAKeySize"
+	}
       }	
 },
   "variables": {},
   "resources": {
       "type":"Microsoft.KeyVault/vaults/keys",
        "name":"[concat(parameters('KetValutName'), '/', parameters('Name'))]",  
-       "KeyType":"[parameters('KeyType')]",  
        "Options":"[parameters('Options')]",  
        "KeyType":"[parameters('KeyType')]",  
        "RSAKeySize":"[parameters('RSAKeySize')]",  
@@ -42,7 +46,7 @@
           "value":"ThisIpsemIsSecret"
         },
         "dependsOn":[
-          "[resourceId('Microsoft.KeyVault/vaults',[parameters('KetValutName')]])]"
+          "[resourceId('Microsoft.KeyVault/vaults',[parameters('KetValutName')])]"
         ]
   },
   "outputs": {}
