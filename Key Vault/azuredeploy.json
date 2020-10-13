@@ -92,3 +92,4 @@
           "value": "[parameters('KVName')]"
   }
 }
+}
