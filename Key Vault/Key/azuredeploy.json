@@ -18,7 +18,7 @@
   "variables": {},
   "resources": {
        "type":"Microsoft.KeyVault/vaults/keys",
-       "name":"[concat(parameters('KetValutName'), '/', parameters('Name'))]",       
+       "name":"[parameters('Name')]",       
        "apiVersion":"2019-09-01",
         "properties":{
           "contentType":"text/plain",
