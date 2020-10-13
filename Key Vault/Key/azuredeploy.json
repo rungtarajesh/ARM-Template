@@ -3,44 +3,23 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
 	  "Name": {
-      "type": "string",
-      "metadata": {
-        "description": "Name of the Key Vault key"
-      	}
+	      "type": "string",
+	      "metadata": {
+		"description": "Name of the Key Vault key"
+	     }
 	},	
       "KetValutName": {
         "type": "string",
         "metadata": {
           "description": "Name of the Key Vault key"
 	}
-      }	,
-      "Options": {
-        "type": "string",
-        "metadata": {
-          "description": "Options"
-	}
-      }	,
-      "KeyType": {
-        "type": "string",
-        "metadata": {
-          "description": "KeyType"
-	}
-      }	,
-      "RSAKeySize": {
-        "type": "int",
-        "metadata": {
-          "description": "RSAKeySize"
-	}
-      }	
+      }	     
 },
   "variables": {},
   "resources": {
-      "type":"Microsoft.KeyVault/vaults/keys",
-       "name":"[concat(parameters('KetValutName'), '/', parameters('Name'))]",  
-       "Options":"[parameters('Options')]",  
-       "KeyType":"[parameters('KeyType')]",  
-       "RSAKeySize":"[parameters('RSAKeySize')]",  
-       "apiVersion":"2015-06-01",
+       "type":"Microsoft.KeyVault/vaults/keys",
+       "name":"[concat(parameters('KetValutName'), '/', parameters('Name'))]",       
+       "apiVersion":"2019-09-01",
         "properties":{
           "contentType":"text/plain",
           "value":"ThisIpsemIsSecret"
