@@ -1,72 +1,52 @@
-
-
 {
- "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "KVname" : {
-      "type" : "string",
-       "metadata": {
-        "description": "Name of the Key Vault"
-      }	
-    },
-    "location" : {
-      "type" : "string",
-       "metadata": {
-        "description": "Location for all resources."
-      }	
-    },
-    "sku" : {
-      "type" : "string",
-       "metadata": {
-        "description": "sku for the Key Vault"
-      }	
-    },
-    "accessPolicies" : {
-      "type" : "array",
-       "metadata": {
-        "description": "Name of the Key Vault"
-      }	
-    },
-    "tenant" : {
-      "type" : "string",
-       "metadata": {
-        "description": "Name of the Key Vault"
-      }	
-    },
-    "enabledForDeployment" : {
-      "type" : "bool",
-       "metadata": {
-        "description": "Name of the Key Vault"
-      }	
-    },
-   "enabledForTemplateDeployment": {
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "name": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string"
+        },
+        "sku": {
+            "type": "string"
+        },
+        "accessPolicies": {
+            "type": "array"
+        },
+        "tenant": {
+            "type": "string"
+        },
+        "enabledForDeployment": {
             "type": "bool"
+        },
+        "enabledForTemplateDeployment": {
+            "type": "bool"
+        },
+        "enabledForDiskEncryption": {
+            "type": "bool"
+        },
+        "enableRbacAuthorization": {
+            "type": "bool"
+        },
+        "enableSoftDelete": {
+            "type": "bool"
+        },
+        "softDeleteRetentionInDays": {
+            "type": "int"
+        },
+        "networkAcls": {
+            "type": "object"
+        }
     },
-    "enabledForDiskEncryption": {
-        "type": "bool"
-    },
-    "enableRbacAuthorization": {
-        "type": "bool"
-    },
-    "enableSoftDelete": {
-        "type": "bool"
-    },
-    "softDeleteRetentionInDays": {
-        "type": "int"
-    },
-    "networkAcls": {
-        "type": "object"
-    }
-  
-  },
-  "variables": {},
-  "resources": [{
-    "type": "Microsoft.KeyVault/vaults",
-     "apiVersion": "2018-02-14",
-      "name": "[parameters('KVname')]",
-      "location": "[parameters('location')]",
-     "properties": {
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2018-02-14",
+            "name": "[parameters('name')]",
+            "location": "[parameters('location')]",
+            "type": "Microsoft.KeyVault/vaults",
+            "properties": {
                 "enabledForDeployment": "[parameters('enabledForDeployment')]",
                 "enabledForTemplateDeployment": "[parameters('enabledForTemplateDeployment')]",
                 "enabledForDiskEncryption": "[parameters('enabledForDiskEncryption')]",
@@ -85,11 +65,7 @@
                 "department": "finanace"
             },
             "dependsOn": []
-  }],
-  "outputs": {
-          "KVname": {
-          "type": "string",
-          "value": "[parameters('KVName')]"
-  }
-}
+        }
+    ],
+    "outputs": {}
 }
