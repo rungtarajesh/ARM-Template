@@ -30,7 +30,7 @@
 },
   "variables": {},
   "resources": {
-      "type" : "type":"Microsoft.KeyVault/vaults/keys",
+      "type":"Microsoft.KeyVault/vaults/keys",
        "name":"[concat(parameters('KetValutName'), '/', parameters('Name'))]",  
        "KeyType":"[parameters('KeyType')]",  
        "Options":"[parameters('Options')]",  
