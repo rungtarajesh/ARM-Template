@@ -76,9 +76,7 @@
         "adminUsername": {
             "value": "testuse"
         },
-        "adminPassword": {
-            "value": null
-        },
+       
         "patchMode": {
             "value": "AutomaticByOS"
         },
