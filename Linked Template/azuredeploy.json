@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": {    
+      "apiVersion": "2018-05-01",
+      "name" : "linkedtemplate-Vnet",
+      "type" : "Microsoft.Resources/deployments",
+      "porperties":{
+          "mode": "incremental",
+          "templatelink":{
+            "uri":"[uri(deployment().properties.templateLink.uri,'https://raw.githubusercontent.com/rungtarajesh/ARM-Template/main/001-Virtual%20Network/azuredeploy.json']",
+            "currentVersion":"1.0.0.0"
+          },
+          "parameters":{
+            "uri":"[uri(deployment().properties.templateLink.uri,'https://raw.githubusercontent.com/rungtarajesh/ARM-Template/main/001-Virtual%20Network/azuredeploy.parameters.json']",
+            "currentVersion":"1.0.0.0"
+          }
+      }            
+  },
+  "outputs": {}
+}
