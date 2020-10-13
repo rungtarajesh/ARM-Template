@@ -6,22 +6,22 @@
       "type": "string",
       "metadata": {
         "description": "Name of the Key Vault key"
-      }	
+      },	
       "KetValutName": {
         "type": "string",
         "metadata": {
           "description": "Name of the Key Vault key"
-      }	
+      }	,
       "Options": {
         "type": "string",
         "metadata": {
           "description": "Options"
-      }	
+      }	,
       "KeyType": {
         "type": "string",
         "metadata": {
           "description": "KeyType"
-      }	
+      }	,
       "RSAKeySize": {
         "type": "int",
         "metadata": {
@@ -34,7 +34,8 @@
        "name":"[concat(parameters('KetValutName'), '/', parameters('Name'))]",  
        "KeyType":"[parameters('KeyType')]",  
        "Options":"[parameters('Options')]",  
-       "type":"[parameters('type')]",  
+       "KeyType":"[parameters('KeyType')]",  
+       "RSAKeySize":"[parameters('RSAKeySize')]",  
        "apiVersion":"2015-06-01",
         "properties":{
           "contentType":"text/plain",
