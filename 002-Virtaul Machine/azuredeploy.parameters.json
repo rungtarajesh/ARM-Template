@@ -1,0 +1,104 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "centralus"
+        },
+        "networkInterfaceName": {
+            "value": "webapp2030292"
+        },
+        "networkSecurityGroupName": {
+            "value": "webapp2030-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDP",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkName": {
+            "value": "ARMRGRAJESH-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.1.0.0/24"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "10.1.0.0/24"
+                    }
+                }
+            ]
+        },
+        "publicIpAddressName": {
+            "value": "webapp2030-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "webapp2030"
+        },
+        "virtualMachineComputerName": {
+            "value": "webapp2030"
+        },
+        "virtualMachineRG": {
+            "value": "ARMRGRAJESH"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1s"
+        },
+        "adminUsername": {
+            "value": "testuse"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "patchMode": {
+            "value": "AutomaticByOS"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "19:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "UTC"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownNotificationLocale": {
+            "value": "en"
+        },
+        "autoShutdownNotificationEmail": {
+            "value": "rajesh.kumar.rungta@accenture.com"
+        }
+    }
+}
