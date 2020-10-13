@@ -23,7 +23,7 @@
       }	
     },
     "accessPolicies" : {
-      "type" : "string",
+      "type" : "array",
        "metadata": {
         "description": "Name of the Key Vault"
       }	
