@@ -16,7 +16,7 @@
       }	     
 },
   "variables": {},
-  "resources": {
+  "resources": [{
        "type":"Microsoft.KeyVault/vaults/keys",
        "name":"[parameters('Name')]",       
        "apiVersion":"2019-09-01",
@@ -27,6 +27,6 @@
         "dependsOn":[
           "[resourceId('Microsoft.KeyVault/vaults',[parameters('KetValutName')])]"
         ]
-  },
+  }],
   "outputs": {}
 }
